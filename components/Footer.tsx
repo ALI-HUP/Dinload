@@ -7,26 +7,27 @@ export default function Footer() {
         fixed bottom-4 sm:bottom-5 md:bottom-6 lg:bottom-8
         left-1/2 -translate-x-1/2
 
-        w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%]
+        w-[85%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%]
         max-w-5xl shadow-2xl
       "
     >
-      <div className="backdrop-blur-xl bg-black/70 text-white rounded-full flex items-center border border-white/35">
-        <Link href="/" className="flex-1 text-center p-3 rounded-full hover:bg-white/20">
-          <p className=" transition duration-200 hover:scale-110">خانه</p>
+      <div className="backdrop-blur-xl bg-black/70 text-white rounded-full flex justify-around items-center border border-white/35">
+        <Link href="/" className="text-center p-3 rounded-full hover:bg-white/20">
+          خانه
         </Link>
 
-        <Link href="/" className="flex-1 text-center p-3 rounded-full hover:bg-white/20">
-          <p className=" transition duration-200 hover:scale-110">جستجو</p>
+        <Link href="/" className="text-center p-3 rounded-full hover:bg-white/20">
+          جستجو
         </Link>
 
-        <Link href="/" className="flex-1 text-center p-3 rounded-full hover:bg-white/20">
-          <p className=" transition duration-200 hover:scale-110">پروفایل</p>
+        <Link href="/" className="text-center p-3 rounded-full hover:bg-white/20">
+          پروفایل
         </Link>
 
-        <Link href="/" className="flex-1 text-center p-3 rounded-full hover:bg-white/20">
-          <p className=" transition duration-200 hover:scale-110">داشبورد</p>
+        <Link href="/" className="text-center p-3 rounded-full hover:bg-white/20">
+          داشبورد
         </Link>
+
       </div>
     </div>
   );
