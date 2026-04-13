@@ -5,10 +5,10 @@ export default function Footer() {
     <div
       className="
         fixed bottom-4 sm:bottom-5 md:bottom-6 lg:bottom-8
-        left-1/2 -translate-x-1/2
+        m-auto left-0 right-0
 
         w-[85%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%]
-        max-w-5xl shadow-2xl
+        max-w-4xl shadow-2xl
       "
     >
       <div className="backdrop-blur-xl bg-black/70 text-white rounded-full flex justify-around items-center border border-white/35">
