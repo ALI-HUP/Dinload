@@ -8,7 +8,7 @@ export default function Footer() {
         left-1/2 -translate-x-1/2
 
         w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%]
-        max-w-5xl
+        max-w-5xl shadow-2xl
       "
     >
       <div className="backdrop-blur-xl bg-black/70 text-white rounded-full flex items-center border border-white/35">
@@ -44,7 +44,7 @@ export default function Footer() {
 
 
 
-// w-[90%] → موبایل کوچک
+// w-[85%] → موبایل کوچک
 // sm:w-[80%] → موبایل بزرگ
 // md:w-[70%] → تبلت
 // lg:w-[60%] → لپتاپ
