@@ -11,36 +11,22 @@ export default function Footer() {
         max-w-5xl shadow-2xl
       "
     >
-      <div className="backdrop-blur-xl bg-black/70 text-white rounded-full border border-white/35">
-        
-        <div className="grid grid-cols-4 items-center">
-          
-          <Link href="/" className="group">
-            <div className="flex items-center justify-center py-3 rounded-full transition-all duration-200 group-hover:bg-white/20 group-hover:scale-105">
-              خانه
-            </div>
-          </Link>
+      <div className="backdrop-blur-xl bg-black/70 text-white rounded-full flex items-center border border-white/35">
+        <Link href="/" className="flex-1 text-center p-3 rounded-full hover:bg-white/20">
+          <p className=" transition duration-200 hover:scale-110">خانه</p>
+        </Link>
 
-          <Link href="/" className="group">
-            <div className="flex items-center justify-center py-3 rounded-full transition-all duration-200 group-hover:bg-white/20 group-hover:scale-105">
-              جستجو
-            </div>
-          </Link>
+        <Link href="/" className="flex-1 text-center p-3 rounded-full hover:bg-white/20">
+          <p className=" transition duration-200 hover:scale-110">جستجو</p>
+        </Link>
 
-          <Link href="/" className="group">
-            <div className="flex items-center justify-center py-3 rounded-full transition-all duration-200 group-hover:bg-white/20 group-hover:scale-105">
-              پروفایل
-            </div>
-          </Link>
+        <Link href="/" className="flex-1 text-center p-3 rounded-full hover:bg-white/20">
+          <p className=" transition duration-200 hover:scale-110">پروفایل</p>
+        </Link>
 
-          <Link href="/" className="group">
-            <div className="flex items-center justify-center py-3 rounded-full transition-all duration-200 group-hover:bg-white/20 group-hover:scale-105">
-              داشبورد
-            </div>
-          </Link>
-
-        </div>
-
+        <Link href="/" className="flex-1 text-center p-3 rounded-full hover:bg-white/20">
+          <p className=" transition duration-200 hover:scale-110">داشبورد</p>
+        </Link>
       </div>
     </div>
   );
