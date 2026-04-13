@@ -7,13 +7,9 @@ export const metadata: Metadata = {
   description: "Movie and series download website",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
-    <html lang="en">
+    <html lang="fa">
       <body>{children}</body>
     </html>
   );
