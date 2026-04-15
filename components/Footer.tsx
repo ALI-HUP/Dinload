@@ -4,27 +4,27 @@ export default function Footer() {
   return (
     <div
       className="
-        fixed bottom-4 sm:bottom-5 md:bottom-6 lg:bottom-8
+        fixed bottom-5
         m-auto left-0 right-0
 
-        w-[85%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%]
-        max-w-4xl shadow-2xl
+        w-[90%] sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[50%]
+        max-w-5xl shadow-2xl
       "
     >
       <div className="backdrop-blur-xl bg-black/70 text-white rounded-full flex justify-around items-center border border-white/35">
-        <Link href="/" className="text-center p-3 rounded-full hover:bg-white/20">
+        <Link href="/" className="flex-1 text-center p-3 rounded-full hover:bg-white/20">
           خانه
         </Link>
 
-        <Link href="/" className="text-center p-3 rounded-full hover:bg-white/20">
+        <Link href="/" className="flex-1 text-center p-3 rounded-full hover:bg-white/20">
           جستجو
         </Link>
 
-        <Link href="/" className="text-center p-3 rounded-full hover:bg-white/20">
+        <Link href="/" className="flex-1 text-center p-3 rounded-full hover:bg-white/20">
           پروفایل
         </Link>
 
-        <Link href="/" className="text-center p-3 rounded-full hover:bg-white/20">
+        <Link href="/" className="flex-1 text-center p-3 rounded-full hover:bg-white/20">
           داشبورد
         </Link>
 
