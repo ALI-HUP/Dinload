@@ -21,19 +21,17 @@ export default function Footer() {
         z-50
       "
     >
-      <div className="backdrop-blur-xl bg-black/70 text-white rounded-full flex items-center border border-white/35 relative overflow-hidden">
+      <div className="backdrop-blur-xl bg-black/70 text-white rounded-full flex items-center justify-around border border-white/35 relative overflow-hidden">
         
         <div 
-          className="absolute z-30 transition-all duration-500 ease-in-out flex items-center justify-center"
+          className="absolute z-30 w-[25%] transition-all duration-500 ease-in-out flex items-center justify-center"
           style={{ 
             right: isSearchOpen ? "0%" : "25%", 
-            width: "25%",
-            height: "100%"
           }}
         >
           <button
             onClick={() => setIsSearchOpen(true)}
-            className="w-full h-full flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition"
+            className="flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition"
           >
             <SearchIcon fontSize="medium" />
           </button>
@@ -41,27 +39,27 @@ export default function Footer() {
 
         <Link 
           href="/" 
-          className={`flex-1 flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition duration-500 ${
+          className={`flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition duration-500 ${
             isSearchOpen ? "opacity-0 scale-50 pointer-events-none" : "opacity-100"
           }`}
         >
           <HomeIcon fontSize="medium" />
         </Link>
 
-        <div className="flex-1 p-3 invisible">
+        <div className="p-3 invisible">
           <SearchIcon fontSize="medium" />
         </div>
 
         <Link 
           href="/" 
-          className={`flex-1 flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition duration-500 ${
+          className={`flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition duration-500 ${
             isSearchOpen ? "opacity-0 scale-50 pointer-events-none" : "opacity-100"
           }`}
         >
           <PersonIcon fontSize="medium" />
         </Link>
 
-        <div className="flex-1 h-full flex items-center justify-center">
+        <div className="h-full flex items-center justify-center">
           {isSearchOpen ? (
             <button 
               onClick={() => setIsSearchOpen(false)}
