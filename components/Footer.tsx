@@ -14,14 +14,12 @@ export default function Footer() {
   return (
     <div
       className="
-        fixed bottom-5
-        m-auto left-0 right-0
+        fixed bottom-5 m-auto left-0 right-0
         w-[85%] sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[50%]
-        max-w-5xl shadow-2xl
-        z-50
+        max-w-5xl shadow-2xl z-50
       "
     >
-      <div className="backdrop-blur-xl bg-black/70 text-white rounded-full flex items-center justify-around border border-white/35 relative overflow-hidden">
+      <div className="bg-black text-white rounded-full flex items-center justify-around border border-white/35 relative overflow-hidden">
         
         <div 
           className="absolute z-30 w-[25%] transition-all duration-500 ease-in-out flex items-center justify-center"
