@@ -21,6 +21,26 @@ export default function Footer() {
     >
       <div className="bg-black text-white rounded-full flex items-center justify-around border border-white/35 relative overflow-hidden">
         
+        <div className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${
+          isSearchOpen ? "opacity-0" : "opacity-100"
+        }`}>
+          
+          <div
+            className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 rounded-full"
+            style={{ left: "25%" }}
+          />
+
+          <div
+            className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 rounded-full"
+            style={{ left: "50%" }}
+          />
+
+          <div
+            className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 rounded-full"
+            style={{ left: "75%" }}
+          />
+        </div>
+
         <div 
           className="absolute z-30 w-[25%] transition-all duration-500 ease-in-out flex items-center justify-center"
           style={{ 
