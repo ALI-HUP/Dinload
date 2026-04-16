@@ -58,20 +58,33 @@ export default function Footer() {
         </Link>
 
         <div className="h-full flex items-center justify-center">
-          {isSearchOpen ? (
-            <button 
-              onClick={() => setIsSearchOpen(false)}
-              className="w-full h-full flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition z-40"
-            >
-              <CloseIcon fontSize="medium" />
-            </button>
-          ) : (
-            <button 
-              className="w-full h-full flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition z-40"
-            >
-              <MenuIcon fontSize="medium" />
-            </button>
-          )}
+          <button
+            onClick={() => {
+              if (isSearchOpen) setIsSearchOpen(false);
+            }}
+            className="w-full h-full flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition z-40"
+          >
+            <div className="relative w-6 h-6 flex items-center justify-center">
+              
+              <span
+                className={`absolute h-0.5 w-5 bg-white rounded transition-all duration-300 ease-in-out
+                  ${isSearchOpen ? "rotate-45 translate-y-0" : "-translate-y-1.5"}
+                `}
+              />
+
+              <span
+                className={`absolute h-0.5 w-5 bg-white rounded transition-all duration-300 ease-in-out
+                  ${isSearchOpen ? "opacity-0" : "opacity-100"}
+                `}
+              />
+
+              <span
+                className={`absolute h-0.5 w-5 bg-white rounded transition-all duration-300 ease-in-out
+                  ${isSearchOpen ? "-rotate-45 translate-y-0" : "translate-y-1.5"}
+                `}
+              />
+            </div>
+          </button>
         </div>
 
         <div 
