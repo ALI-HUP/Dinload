@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
@@ -10,6 +10,18 @@ import CloseIcon from "@mui/icons-material/Close";
 
 export default function Footer() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [query, setQuery] = useState("");
+
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    if (!inputRef.current) return;
+
+    const el = inputRef.current;
+    el.scrollLeft = el.scrollWidth;
+  }, [query]);
+
+
 
   return (
     <div
@@ -24,28 +36,14 @@ export default function Footer() {
         <div className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${
           isSearchOpen ? "opacity-0" : "opacity-100"
         }`}>
-          
-          <div
-            className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 rounded-full"
-            style={{ left: "25%" }}
-          />
-
-          <div
-            className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 rounded-full"
-            style={{ left: "50%" }}
-          />
-
-          <div
-            className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 rounded-full"
-            style={{ left: "75%" }}
-          />
+          <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 rounded-full" style={{ left: "25%" }} />
+          <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 rounded-full" style={{ left: "50%" }} />
+          <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 rounded-full" style={{ left: "75%" }} />
         </div>
 
         <div 
           className="absolute z-30 w-[25%] transition-all duration-500 ease-in-out flex items-center justify-center"
-          style={{ 
-            right: isSearchOpen ? "0%" : "25%", 
-          }}
+          style={{ right: isSearchOpen ? "0%" : "25%" }}
         >
           <button
             onClick={() => setIsSearchOpen(true)}
@@ -85,19 +83,16 @@ export default function Footer() {
             className="w-full h-full flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition z-40"
           >
             <div className="relative w-6 h-6 flex items-center justify-center">
-              
               <span
                 className={`absolute h-0.5 w-5 bg-white rounded transition-all duration-300 ease-in-out
                   ${isSearchOpen ? "rotate-45 translate-y-0" : "-translate-y-1.5"}
                 `}
               />
-
               <span
                 className={`absolute h-0.5 w-5 bg-white rounded transition-all duration-300 ease-in-out
                   ${isSearchOpen ? "opacity-0" : "opacity-100"}
                 `}
               />
-
               <span
                 className={`absolute h-0.5 w-5 bg-white rounded transition-all duration-300 ease-in-out
                   ${isSearchOpen ? "-rotate-45 translate-y-0" : "translate-y-1.5"}
@@ -113,12 +108,21 @@ export default function Footer() {
               ? "opacity-100 translate-x-0 w-[70%] sm:w-[60%] md:w-[50%]"
               : "opacity-0 translate-x-10 pointer-events-none"
           }`}
-          style={{ right: "25%", width: "50%", height: "100%" }}
+          style={{ right: "25%", height: "100%" }}
         >
           <input
+            ref={inputRef}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
             autoFocus={isSearchOpen}
             placeholder="جستجو فیلم یا سریال..."
-            className="w-full bg-transparent outline-none text-white placeholder:text-white/60 px-2 sm:px-3 md:px-4 text-sm sm:text-base md:text-lg leading-tight"
+            className="
+              w-full bg-transparent outline-none text-white placeholder:text-white/60
+              px-2 sm:px-3 md:px-4
+              text-sm sm:text-base md:text-lg
+              leading-tight
+              min-w-0
+            "
           />
         </div>
       </div>
