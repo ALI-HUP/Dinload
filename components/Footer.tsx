@@ -109,14 +109,16 @@ export default function Footer() {
 
         <div 
           className={`absolute transition-all duration-500 ease-in-out flex items-center ${
-            isSearchOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10 pointer-events-none"
+            isSearchOpen
+              ? "opacity-100 translate-x-0 w-[70%] sm:w-[60%] md:w-[50%]"
+              : "opacity-0 translate-x-10 pointer-events-none"
           }`}
           style={{ right: "25%", width: "50%", height: "100%" }}
         >
           <input
             autoFocus={isSearchOpen}
-            placeholder="جستجو..."
-            className="w-full bg-transparent outline-none text-white placeholder:text-white/60 px-4 text-lg"
+            placeholder="جستجو فیلم یا سریال..."
+            className="w-full bg-transparent outline-none text-white placeholder:text-white/60 px-2 sm:px-3 md:px-4 text-sm sm:text-base md:text-lg leading-tight"
           />
         </div>
       </div>
