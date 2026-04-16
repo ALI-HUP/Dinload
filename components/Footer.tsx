@@ -18,7 +18,11 @@ export default function Footer() {
     if (!inputRef.current) return;
 
     const el = inputRef.current;
-    el.scrollLeft = el.scrollWidth;
+
+    el.scrollTo({
+      left: el.scrollWidth,
+      behavior: "auto",
+    });
   }, [query]);
 
 
@@ -75,7 +79,7 @@ export default function Footer() {
           <PersonIcon fontSize="medium" />
         </Link>
 
-        <div className="h-full flex items-center justify-center">
+        <div className="h-full flex items-center justify-center relative z-50 bg-black/90 backdrop-blur-md">
           <button
             onClick={() => {
               if (isSearchOpen) setIsSearchOpen(false);
@@ -115,13 +119,15 @@ export default function Footer() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             autoFocus={isSearchOpen}
-            placeholder="جستجو فیلم یا سریال..."
+            dir="auto"
+            placeholder="...جستجو فیلم یا سریال"
             className="
               w-full bg-transparent outline-none text-white placeholder:text-white/60
               px-2 sm:px-3 md:px-4
               text-sm sm:text-base md:text-lg
               leading-tight
               min-w-0
+              text-right
             "
           />
         </div>
