@@ -167,19 +167,19 @@ export default function Footer() {
             <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 left-3/4" />
           </div>
 
-          <Link href="/" className="w-1/4 text-center p-2.5 text-[10px] xs:text-xs sm:text-sm md:text-base">
+          <Link href="/" className="w-1/4 text-center py-3 text-xs xs:text-xs sm:text-sm md:text-base">
             دسته بندی
           </Link>
 
-          <Link href="/" className="w-1/4 text-center p-2.5 text-[10px] xs:text-xs sm:text-sm md:text-base">
+          <Link href="/" className="w-1/4 text-center py-3 text-xs xs:text-xs sm:text-sm md:text-base">
             اشتراک
           </Link>
 
-          <Link href="/" className="w-1/4 text-center p-2.5 text-[10px] xs:text-xs sm:text-sm md:text-base">
+          <Link href="/" className="w-1/4 text-center py-3 text-xs xs:text-xs sm:text-sm md:text-base">
             پیام‌ها
           </Link>
 
-          <Link href="/" className="w-1/4 text-center p-2.5 text-[10px] xs:text-xs sm:text-sm md:text-base">
+          <Link href="/" className="w-1/4 text-center py-3 text-xs xs:text-xs sm:text-sm md:text-base">
             راه ارتباطی
           </Link>
 
