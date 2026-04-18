@@ -150,51 +150,38 @@ export default function Footer() {
 
       <div
         className={`fixed left-1/2 -translate-x-1/2 bottom-22.5
-        w-[85%] sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[50%]
+        w-[85%] md:w-[75%] lg:w-[65%] xl:w-[50%]
         max-w-5xl bg-black/95 border border-white/20 rounded-4xl shadow-2xl
         transition-all duration-300 ease-in-out z-40
         ${
           isMenuOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-10 pointer-events-none"
+            ? "opacity-100 translate-y-0 scale-100"
+            : "opacity-0 translate-y-6 scale-95 pointer-events-none"
         }`}
       >
-        <div className="
-          relative
-          p-2 sm:p-3 md:p-4
-          flex items-center
-          rounded-full text-white border border-white/35
-        ">
+        <div className="relative w-full flex items-center text-white overflow-hidden">
 
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/2 -translate-y-1/2 h-4 sm:h-5 w-px bg-white/20" style={{ left: "25%" }} />
-            <div className="absolute top-1/2 -translate-y-1/2 h-4 sm:h-5 w-px bg-white/20" style={{ left: "50%" }} />
-            <div className="absolute top-1/2 -translate-y-1/2 h-4 sm:h-5 w-px bg-white/20" style={{ left: "75%" }} />
+            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 left-1/4" />
+            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 left-2/4" />
+            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 left-3/4" />
           </div>
 
-          <div className="w-1/4 flex justify-center">
-            <span className="text-[10px] sm:text-xs md:text-sm lg:text-base truncate">
-              دسته بندی‌ها
-            </span>
-          </div>
+          <Link href="/" className="w-1/4 text-center p-2.5 text-[10px] xs:text-xs sm:text-sm md:text-base">
+            دسته بندی
+          </Link>
 
-          <div className="w-1/4 flex justify-center">
-            <span className="text-[10px] sm:text-xs md:text-sm lg:text-base truncate">
-              خرید اشتراک
-            </span>
-          </div>
+          <Link href="/" className="w-1/4 text-center p-2.5 text-[10px] xs:text-xs sm:text-sm md:text-base">
+            اشتراک
+          </Link>
 
-          <div className="w-1/4 flex justify-center">
-            <span className="text-[10px] sm:text-xs md:text-sm lg:text-base truncate">
-              پیام‌ها
-            </span>
-          </div>
+          <Link href="/" className="w-1/4 text-center p-2.5 text-[10px] xs:text-xs sm:text-sm md:text-base">
+            پیام‌ها
+          </Link>
 
-          <div className="w-1/4 flex justify-center">
-            <span className="text-[10px] sm:text-xs md:text-sm lg:text-base truncate">
-              راه ارتباطی
-            </span>
-          </div>
+          <Link href="/" className="w-1/4 text-center p-2.5 text-[10px] xs:text-xs sm:text-sm md:text-base">
+            راه ارتباطی
+          </Link>
 
         </div>
       </div>
