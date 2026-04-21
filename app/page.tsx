@@ -15,6 +15,19 @@ export default function Home() {
   const [index, setIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(0);
 
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setPrevIndex(index);
@@ -65,15 +78,15 @@ export default function Home() {
             let height = 150;
             let centerScale = 1.25;
 
-            if (window.innerWidth >= 640) {
+            if (width >= 640) {
               baseWidth = 110;
               height = 180;
             }
-            if (window.innerWidth >= 768) {
+            if (width >= 768) {
               baseWidth = 120;
               height = 200;
             }
-            if (window.innerWidth >= 1024) {
+            if (width >= 1024) {
               baseWidth = 140;
               height = 230;
               centerScale = 1.3;
