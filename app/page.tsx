@@ -42,29 +42,29 @@ export default function Home() {
 
       <div className="w-full flex flex-col items-center">
 
-        <div className="relative w-full h-65 sm:h-75 md:h-85 lg:h-90 xl:h-95 overflow-hidden">
+        <div className="relative w-full h-56 sm:h-60 md:h-72 lg:h-85 xl:h-90 overflow-hidden">
 
           <img
             src={images[prevIndex]}
             className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out
               ${
                 prevIndex !== index
-                  ? "opacity-0 scale-105 blur-sm"
-                  : "opacity-100 scale-100 blur-sm"
+                  ? "opacity-0 scale-105 blur-xs"
+                  : "opacity-100 scale-100 blur-xs"
               }
             `}
           />
 
           <img
             src={images[index]}
-            className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out opacity-100 scale-105 blur-sm"
+            className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out opacity-100 scale-105 blur-xs"
           />
 
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="absolute inset-x-0 bottom-0 h-32 sm:h-36 md:h-40 bg-linear-to-t from-gray-700 via-gray-700/70 to-transparent" />
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-x-0 bottom-0 h-32 sm:h-36 md:h-40 bg-linear-to-t from-gray-700 via-gray-700/60 to-transparent" />
         </div>
 
-        <div className="relative w-full max-w-[95%] sm:max-w-[90%] md:max-w-[85%] lg:max-w-6xl h-35 sm:h-40 md:h-45 lg:h-50 flex items-center justify-center">
+        <div className="relative w-full max-w-[95%] sm:max-w-[90%] md:max-w-[85%] lg:max-w-6xl h-24 sm:h-32 md:h-40 lg:h-40 flex items-center justify-center">
 
           {images.map((img, i) => {
             let position = i - index;
@@ -74,22 +74,24 @@ export default function Home() {
 
             const isCenter = position === 0;
 
-            let baseWidth = 90;
-            let height = 150;
-            let centerScale = 1.25;
+            let baseWidth = 100;
+            let height = 165;
+            let centerScale = 1.3;
 
             if (width >= 640) {
-              baseWidth = 110;
-              height = 180;
-            }
-            if (width >= 768) {
               baseWidth = 120;
-              height = 200;
+              height = 190;
             }
+
+            if (width >= 768) {
+              baseWidth = 130;
+              height = 210;
+            }
+
             if (width >= 1024) {
               baseWidth = 140;
               height = 230;
-              centerScale = 1.3;
+              centerScale = 1.4;
             }
 
             const GAP = baseWidth * 0.1;
