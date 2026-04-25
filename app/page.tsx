@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion, PanInfo } from "framer-motion";
 import Footer from "@/components/Footer";
+import Button from "@/components/Button";
+
 
 const movieData = [
   { title: "Arcane", year: "2021", genre: "Animation" },
@@ -79,13 +81,20 @@ export default function Home() {
             {movieData[index].title}
           </h1>
 
-          <div className="flex items-center space-x-4 pt-2">
-            <button className="px-6 md:px-10 py-3 md:py-4 bg-text-primary text-bg-dark font-black rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl text-sm md:text-base xl:text-lg">
-              Watch Now
-            </button>
-            <button className="p-3 md:p-4 bg-bg-light/40 backdrop-blur-xl border border-text-primary/10 rounded-full hover:bg-bg-light transition-all active:scale-90">
-              <PlusIcon />
-            </button>
+          <div className="flex items-center gap-3">
+            <div>
+              <Button 
+                variant="primary" 
+                text="تماشا کنید" 
+                onClick={() => console.log("Watch Clicked")} 
+              />
+            </div>
+            <div>
+              <Button 
+                variant="secondary" 
+                onClick={() => console.log("Add Clicked")} 
+              />
+            </div>
           </div>
         </div>
 
@@ -145,10 +154,6 @@ export default function Home() {
       <Footer />
     </main>
   );
-}
-
-function PlusIcon() {
-  return <svg width="20" height="20" className="md:w-6 md:h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>;
 }
 
 function PlayIcon() {
