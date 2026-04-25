@@ -79,16 +79,13 @@ export default function Home() {
           </h1>
 
           <div className="flex flex-wrap items-center gap-2 space-x-reverse text-sm font-bold">
-            <span className="px-2.5 py-1 bg-blue-primary/25 text-blue-bold border border-blue-primary rounded-md text-[10px] md:text-xs uppercase tracking-tight">
+            <span className="px-2 py-1 bg-blue-bold/25 text-blue-bold border border-blue-bold rounded-md text-[10px] md:text-xs uppercase">
               {movieData[index].genre}
             </span>
-
-            <div className="flex items-center gap-1 px-2.5 py-1 bg-yellow-500/25 border border-yellow-400 text-yellow-400 rounded-md text-[10px] md:text-xs">
-              <span className="text-[8px] md:text-[10px]">★</span>
-              <span>8.5</span>
-            </div>
-
-            <span className="px-2.5 py-1 bg-text-secondary/40 text-text-primary/90 border border-text-secondary rounded-md text-[10px] md:text-xs">
+            <span className="px-2 py-1 bg-yellow-400/25 text-yellow-400 border border-yellow-400 rounded-md text-[10px] md:text-xs uppercase">
+              ★ 8.5
+            </span>
+            <span className="px-2 py-1 bg-text-primary/25 text-text-primary border border-text-primary rounded-md text-[10px] md:text-xs uppercase">
               {movieData[index].year}
             </span>
           </div>

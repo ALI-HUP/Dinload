@@ -28,22 +28,22 @@ export default function MovieCard({ title, image, year, genre, score = "8.5" }: 
             />
             
             <div className="flex flex-wrap justify-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                <span className="px-2.5 py-1 bg-blue-primary/25 text-blue-bold border border-blue-primary rounded-md text-[10px] md:text-xs uppercase tracking-tight">
-                  {genre}
-                </span>
-                <span className="flex items-center gap-1 px-2.5 py-1 bg-yellow-500/25 border border-yellow-400 text-yellow-400 rounded-md text-[10px] md:text-xs">
-                  ★ {score}
-                </span>
-                <span className="px-2.5 py-1 bg-text-secondary/40 text-text-primary/90 border border-text-secondary rounded-md text-[10px] md:text-xs">
-                  {year}
-                </span>
+              <span className="px-2 py-1 bg-blue-bold/25 text-blue-bold border border-blue-bold rounded-md text-[10px] md:text-xs uppercase">
+                {genre}
+              </span>
+              <span className="px-2 py-1 bg-yellow-400/25 text-yellow-400 border border-yellow-400 rounded-md text-[10px] md:text-xs uppercase">
+                ★ {score}
+              </span>
+              <span className="px-2 py-1 bg-text-primary/25 text-text-primary border border-text-primary rounded-md text-[10px] md:text-xs uppercase">
+                {year}
+              </span>
             </div>
         </div>
       </div>
       
-      <div className="mt-3 flex flex-col gap-1 pr-1">
-        <div className="flex items-center justify-between gap-1">
-            <h3 className="text-[8px] md:text-xs font-bold uppercase tracking-tighter text-text-primary group-hover:text-blue-primary transition-colors duration-300 line-clamp-3 leading-tight min-h-[2.2rem] md:min-h-10">
+      <div className="mt-3 flex flex-col gap-1">
+        <div className="flex items-center justify-between">
+            <h3 className="text-[10px] md:text-xs font-bold uppercase tracking-tighter text-text-primary group-hover:text-blue-bold transition-colors duration-300 line-clamp-3 leading-tight min-h-[2.2rem] md:min-h-10">
                 {title} ({year})
             </h3>
         </div>
