@@ -36,14 +36,14 @@ export default function Footer() {
           max-w-5xl shadow-2xl z-50
         "
       >
-        <div className="bg-black text-white rounded-full flex items-center justify-around border border-white/35 relative overflow-hidden">
+        <div className="bg-bg-dark rounded-full flex items-center justify-around border border-text-secondary/30 relative overflow-hidden">
 
           <div className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${
             isSearchOpen ? "opacity-0" : "opacity-100"
           }`}>
-            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20" style={{ left: "25%" }} />
-            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20" style={{ left: "50%" }} />
-            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20" style={{ left: "75%" }} />
+            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-text-secondary" style={{ left: "25%" }} />
+            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-text-secondary" style={{ left: "50%" }} />
+            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-text-secondary" style={{ left: "75%" }} />
           </div>
 
           <div
@@ -55,7 +55,7 @@ export default function Footer() {
                 setIsMenuOpen(false);
                 setIsSearchOpen(true);
               }}
-              className="flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition"
+              className="flex items-center justify-center p-3 rounded-full hover:bg-text-secondary/20 transition"
             >
               <SearchIcon fontSize="medium" />
             </button>
@@ -63,7 +63,7 @@ export default function Footer() {
 
           <Link
             href="/"
-            className={`flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition duration-500 ${
+            className={`flex items-center justify-center p-3 rounded-full hover:bg-text-secondary/20 transition duration-500 ${
               isSearchOpen ? "opacity-0 scale-50 pointer-events-none" : "opacity-100"
             }`}
           >
@@ -76,14 +76,14 @@ export default function Footer() {
 
           <Link
             href="/"
-            className={`flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition duration-500 ${
+            className={`flex items-center justify-center p-3 rounded-full hover:bg-text-secondary/20 transition duration-500 ${
               isSearchOpen ? "opacity-0 scale-50 pointer-events-none" : "opacity-100"
             }`}
           >
             <PersonIcon fontSize="medium" />
           </Link>
 
-          <div className="h-full flex items-center justify-center relative z-50 bg-black/90 backdrop-blur-md">
+          <div className="h-full flex items-center justify-center relative z-50 backdrop-blur-md">
             <button
               onClick={() => {
                 if (isSearchOpen) {
@@ -94,24 +94,24 @@ export default function Footer() {
                   setIsMenuOpen(true);
                 }
               }}
-              className="w-full h-full flex items-center justify-center p-3 rounded-full hover:bg-white/20 transition"
+              className="w-full h-full flex items-center justify-center p-3 rounded-full hover:bg-text-secondary/20 transition"
             >
               <div className="relative w-6 h-6 flex items-center justify-center">
 
                 <span
-                  className={`absolute h-0.5 w-5 bg-white rounded transition-all duration-300 ease-in-out
+                  className={`absolute h-0.5 w-5 bg-text-primary rounded transition-all duration-300 ease-in-out
                     ${isOverlayOpen ? "rotate-45 translate-y-0" : "-translate-y-1.5"}
                   `}
                 />
 
                 <span
-                  className={`absolute h-0.5 w-5 bg-white rounded transition-all duration-300 ease-in-out
+                  className={`absolute h-0.5 w-5 bg-text-primary rounded transition-all duration-300 ease-in-out
                     ${isOverlayOpen ? "opacity-0" : "opacity-100"}
                   `}
                 />
 
                 <span
-                  className={`absolute h-0.5 w-5 bg-white rounded transition-all duration-300 ease-in-out
+                  className={`absolute h-0.5 w-5 bg-text-primary rounded transition-all duration-300 ease-in-out
                     ${isOverlayOpen ? "-rotate-45 translate-y-0" : "translate-y-1.5"}
                   `}
                 />
@@ -135,7 +135,7 @@ export default function Footer() {
               dir="auto"
               placeholder="...جستجو فیلم یا سریال"
               className="
-                w-full bg-transparent outline-none text-white placeholder:text-white/60
+                w-full bg-transparent outline-none text-text-primary placeholder:text-text-primary/50
                 px-2 sm:px-3 md:px-4
                 text-sm sm:text-base md:text-lg
                 leading-tight
@@ -151,7 +151,7 @@ export default function Footer() {
       <div
         className={`fixed left-1/2 -translate-x-1/2 bottom-22.5
         w-[85%] md:w-[75%] lg:w-[65%] xl:w-[50%]
-        max-w-5xl bg-black/95 border border-white/20 rounded-4xl shadow-2xl
+        max-w-5xl bg-bg-dark border border-text-secondary/30 rounded-4xl shadow-2xl
         transition-all duration-300 ease-in-out z-40
         ${
           isMenuOpen
@@ -159,12 +159,12 @@ export default function Footer() {
             : "opacity-0 translate-y-6 scale-95 pointer-events-none"
         }`}
       >
-        <div className="relative w-full flex items-center text-white overflow-hidden">
+        <div className="relative w-full flex items-center text-text-primary overflow-hidden">
 
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 left-1/4" />
-            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 left-2/4" />
-            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-white/20 left-3/4" />
+            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-text-secondary left-1/4" />
+            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-text-secondary left-2/4" />
+            <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-text-secondary left-3/4" />
           </div>
 
           <Link href="/" className="w-1/4 text-center py-3 text-xs xs:text-xs sm:text-sm md:text-base">

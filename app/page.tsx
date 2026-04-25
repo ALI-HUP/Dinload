@@ -90,11 +90,11 @@ export default function Home() {
 
             if (width >= 1024) {
               baseWidth = 140;
-              height = 230;
-              centerScale = 1.4;
+              height = 220;
+              centerScale = 1.3;
             }
 
-            const GAP = baseWidth * 0.1;
+            const GAP = baseWidth * 0.2;
             const step = baseWidth * centerScale + GAP;
 
             return (
