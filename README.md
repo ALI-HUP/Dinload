@@ -15,7 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Color palette:
 
-``From darkest to lighest:``
+## From darkest to lighest:
 slate-900 (potential need of dark text - potantial need of dark background) (#0F172A)
 slate-800 (background color) (#1E293B)
 slate-700 (ligher background color) (#334155)
@@ -28,7 +28,7 @@ slate-100 (main text) (#F1F5F9)
  ***
 
 
-``Based on usecase:``
+## Based on usecase:
 slate-800 (background color) (#1E293B)
 slate-700 (ligher background color) (#334155)
 ---
