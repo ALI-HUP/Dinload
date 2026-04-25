@@ -11,3 +11,8 @@
   --color-blue-primary: #0284C7;           /* sky-600 */
   --color-blue-bold: #2B7FFF;     /* sky-500 */
 }
+
+body {
+  background-color: #1E293B; /* slate-800 */
+  color: #F1F5F9; /* slate-100 */
+}

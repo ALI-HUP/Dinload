@@ -38,7 +38,7 @@ export default function Home() {
   }, [index]);
 
   return (
-    <main className="min-h-screen bg-bg-primary text-white flex flex-col items-center overflow-x-hidden">
+    <main className="min-h-screen flex flex-col items-center overflow-x-hidden">
 
       <div className="w-full flex flex-col items-center">
 
@@ -57,10 +57,10 @@ export default function Home() {
 
           <img
             src={images[index]}
-            className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out opacity-100 scale-105 blur-xs"
+            className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out scale-105 blur-xs"
           />
 
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-bg-dark/20" />
           <div className="absolute inset-x-0 bottom-0 h-32 sm:h-36 md:h-40 bg-linear-to-t from-bg-primary via-bg-primary/50 to-transparent" />
         </div>
 
