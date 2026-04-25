@@ -175,7 +175,7 @@ export default function Home() {
           items={[...movieData, ...movieData].map((m, i) => ({
             ...m,
             image: images[(i + 2) % images.length],
-            genre: "Series", // You can override genres here
+            genre: "Series",
           }))} 
         />
       </div>
