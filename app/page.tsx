@@ -5,6 +5,8 @@ import { motion, PanInfo } from "framer-motion";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import CategorySection from "@/components/CategorySection";
+
 
 const movieData = [
   { title: "Arcane Arcane Arcane", year: "2021", genre: "Animation" },
@@ -158,6 +160,27 @@ export default function Home() {
           })}
         </div>
       </div>
+
+      <div className="w-full bg-bg-primary relative z-30 -mt-20 pt-20 flex flex-col gap-8">
+        <CategorySection 
+          title="آخرین فیلم‌ها" 
+          items={[...movieData, ...movieData].map((m, i) => ({
+            ...m,
+            image: images[i % images.length],
+          }))} 
+        />
+
+        <CategorySection 
+          title="سریال‌های بروز" 
+          items={[...movieData, ...movieData].map((m, i) => ({
+            ...m,
+            image: images[(i + 2) % images.length],
+            genre: "Series", // You can override genres here
+          }))} 
+        />
+      </div>
+
+      <Footer />
 
       <Footer />
     </main>
