@@ -38,7 +38,7 @@ export default function Home() {
   }, [index]);
 
   return (
-    <main className="min-h-screen bg-slate-800 text-white flex flex-col items-center overflow-x-hidden">
+    <main className="min-h-screen bg-bg-primary text-white flex flex-col items-center overflow-x-hidden">
 
       <div className="w-full flex flex-col items-center">
 
@@ -61,7 +61,7 @@ export default function Home() {
           />
 
           <div className="absolute inset-0 bg-black/30" />
-          <div className="absolute inset-x-0 bottom-0 h-32 sm:h-36 md:h-40 bg-linear-to-t from-slate-800 via-slate-700/50 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-32 sm:h-36 md:h-40 bg-linear-to-t from-bg-primary via-bg-primary/50 to-transparent" />
         </div>
 
         <div className="relative w-full max-w-[95%] sm:max-w-[90%] md:max-w-[85%] lg:max-w-6xl h-24 sm:h-32 md:h-40 lg:h-40 flex items-center justify-center">
