@@ -18,7 +18,7 @@ export default function CategorySection({ title, items }: CategoryProps) {
           </h2>
         </div>
         <Button
-          variant="secondary" 
+          variant="white" 
           text="مشاهده همه" 
         />
       </div>
