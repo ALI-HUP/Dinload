@@ -154,11 +154,11 @@ export default function Home() {
             let scale = 1;
             if (absPos === 0) scale = width < 640 ? 1.1 : width > 1920 ? 1.4 : 1.3;
             else if (absPos === 1) scale = width < 640 ? 0.9 : 1;
-            else if (absPos === 2) scale = width < 640 ? 0.6 : 0.7;
+            else if (absPos === 2) scale = width < 640 ? 0.6 : 0.8;
             
             const baseWidth = width < 400 ? 105 : width < 640 ? 140 : width < 1280 ? 150 : width < 1920 ? 170 : 220;
             const height = baseWidth * 1.5; 
-            const step = baseWidth * (width < 640 ? 0.7 : 0.9); 
+            const step = baseWidth * (width < 640 ? 0.7 : 0.8); 
 
             return (
               <motion.div
