@@ -1,5 +1,4 @@
 # 🦖 Dinload
-
 A Persian platform for downloading movies and series, built with the unique **Dinisor** aesthetic.
 
 ---
