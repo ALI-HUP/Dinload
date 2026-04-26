@@ -1,5 +1,6 @@
 "use client";
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import Badge from "@/components/Badge";
 
 interface MovieCardProps {
   title: string;
@@ -28,15 +29,15 @@ export default function MovieCard({ title, image, year, genre, score = "8.5" }: 
             />
             
             <div className="flex flex-wrap justify-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-              <span className="px-2 py-1 bg-blue-bold/25 text-blue-bold border border-blue-bold rounded-md text-[10px] md:text-xs uppercase">
+              <Badge variant="blue">
                 {genre}
-              </span>
-              <span className="px-2 py-1 bg-yellow-400/25 text-yellow-400 border border-yellow-400 rounded-md text-[10px] md:text-xs uppercase">
-                ★ {score}
-              </span>
-              <span className="px-2 py-1 bg-text-primary/25 text-text-primary border border-text-primary rounded-md text-[10px] md:text-xs uppercase">
+              </Badge>
+              <Badge variant="yellow">
+                {score}
+              </Badge>
+              <Badge variant="white">
                 {year}
-              </span>
+              </Badge>
             </div>
         </div>
       </div>
