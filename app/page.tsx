@@ -15,11 +15,11 @@ import Logo from "@/public/logo/dinisir-head.jpg";
 
 
 const movieData = [
-  { title: "Arcane Arcane Arcane", year: "2021", genre: "Animation" },
-  { title: "Blue Eye Samurai Blue Eye Samurai Blue Eye Samurai", year: "2023", genre: "Action" },
-  { title: "Loki Loki Loki", year: "2021", genre: "Sci-Fi" },
-  { title: "True Detective True Detective True Detective", year: "2014", genre: "Crime" },
-  { title: "Wonder Woman Wonder Woman Wonder Woman", year: "2017", genre: "Action" },
+  { title: "Arcane ", year: "2021", genre: "Animation" },
+  { title: "Blue Eye Samurai", year: "2023", genre: "Action" },
+  { title: "Loki", year: "2021", genre: "Sci-Fi" },
+  { title: "True Detective", year: "2014", genre: "Crime" },
+  { title: "Wonder Woman", year: "2017", genre: "Action" },
 ];
 
 const images = [
@@ -59,8 +59,15 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col items-center mb-20 overflow-x-hidden" dir="rtl">
-      <div className="absolute top-0 inset-x-0 z-50 flex justify-between items-center p-4 md:p-6 lg:px-12 xl:px-14">
-        <Link href="/" className="flex items-center gap-2 group">
+      <div className="w-full flex justify-between items-center p-5 md:px-12 lg:px-20 z-50">
+        <Link href="/" className="flex items-center gap-2 group"
+          onClick={(e) => {
+            if (window.location.pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+        >
           <div className="relative overflow-hidden rounded-xl shadow-lg transition-transform group-hover:scale-105">
             <Image 
               src={Logo} 
@@ -77,25 +84,20 @@ export default function Home() {
           href="/profile" 
           className="
             flex items-center gap-2 
-            p-1 md:pr-3 md:pl-1
+            p-1 pr-2 md:pr-3 md:pl-1
             rounded-full 
-            bg-bg-dark/20 backdrop-blur-md border border-text-primary/5
+            bg-bg-dark/20 backdrop-blur-md border border-text-primary/30
             hover:bg-text-primary/10 transition-all active:scale-95
           "
         >
-          <p className="hidden md:block text-sm lg:text-base font-bold whitespace-nowrap mb-0.5">
+          <p className="text-sm lg:text-base font-bold whitespace-nowrap mb-0.5">
             علی شیخ بهایی
           </p>
-          
-          <AccountCircleIcon 
-            sx={{ 
-              fontSize: { xs: 32, md: 40 },
-              color: 'white' 
-            }} 
-          />
+          <AccountCircleIcon sx={{ fontSize: { xs: 32, md: 40 }, color: 'white' }} />
         </Link>
       </div>
-      <div className="relative w-full min-h-[85vh] lg:h-screen flex flex-col lg:flex-row items-center lg:justify-between justify-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 2xl:px-32 overflow-hidden">
+
+      <div className="relative w-full -mt-22 min-h-[85vh] lg:h-screen flex flex-col lg:flex-row items-center lg:justify-between justify-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 2xl:px-32 overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
             key={`bg-${index}`}
@@ -135,7 +137,7 @@ export default function Home() {
 
           <div className="flex items-center gap-3">
             <Button 
-              variant="primary" 
+              variant="white" 
               text="تماشا کنید" 
               icon={<VisibilityIcon sx={{ fontSize: { xs: 18, sm: 20, md: 24 } }} />}
               onClick={() => console.log("Watch Clicked")} 
@@ -165,7 +167,7 @@ export default function Home() {
                 key={i}
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.15}
+                dragElastic={0.2}
                 onDragEnd={handleDragEnd}
                 animate={{
                   x: position * step,
@@ -177,7 +179,7 @@ export default function Home() {
                 className="absolute"
                 style={{ pointerEvents: absPos > 1 ? "none" : "auto" }}
               >
-                <div className={`relative group overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] ${absPos === 0 ? 'ring-2 ring-text-primary/50' : ''}`}>
+                <div className={`relative group overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] ${absPos === 0 ? 'ring-1 ring-text-primary/50' : ''}`}>
                   <img
                     src={img}
                     className="object-cover pointer-events-none"
@@ -202,7 +204,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full relative z-30 flex flex-col -mt-5 gap-10">
+      <div className="w-full relative z-30 flex flex-col items-center -mt-10 gap-10">
         <CategorySection 
           title="آخرین فیلم‌ها" 
           items={[...movieData, ...movieData].map((m, i) => ({
@@ -210,6 +212,10 @@ export default function Home() {
             image: images[i % images.length],
           }))} 
         />
+
+        <div className="w-full max-w-6xl px-12 opacity-20">
+          <div className="h-0.5 w-full bg-linear-to-r from-transparent via-text-primary to-transparent" />
+        </div>
 
         <CategorySection 
           title="سریال‌های بروز" 

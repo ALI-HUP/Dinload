@@ -61,7 +61,14 @@ export default function Footer() {
               isSearchOpen ? "opacity-0 scale-50 pointer-events-none" : "opacity-100"
             }`}
           >
-            <HomeIcon fontSize="medium" />
+            <HomeIcon fontSize="medium"
+              onClick={(e) => {
+                if (window.location.pathname === "/") {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+            />
           </Link>
 
           <div className="p-3 invisible">
@@ -69,12 +76,19 @@ export default function Footer() {
           </div>
 
           <Link
-            href="/"
+            href="/profile"
             className={`flex items-center justify-center p-3 active:scale-120 rounded-full transition duration-200 ${
               isSearchOpen ? "opacity-0 scale-50 pointer-events-none" : "opacity-100"
             }`}
           >
-            <PersonIcon fontSize="medium" />
+            <PersonIcon fontSize="medium" 
+              onClick={(e) => {
+                if (window.location.pathname === "/profile") {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+            />
           </Link>
 
           <div className="h-full flex items-center justify-center relative z-50 backdrop-blur-md">
