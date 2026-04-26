@@ -53,16 +53,16 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-bg-primary text-text-primary flex flex-col items-center overflow-x-hidden" dir="rtl">
-      <div className="relative w-full min-h-[90vh] lg:h-screen flex flex-col lg:flex-row items-center lg:justify-between justify-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 2xl:px-32 overflow-hidden">
+      <div className="relative w-full min-h-[80vh] lg:h-screen flex flex-col lg:flex-row items-center lg:justify-between justify-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 2xl:px-32 overflow-hidden">
         
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
             key={`bg-${index}`}
             src={images[index]}
-            className="w-full h-full object-cover opacity-30 transition-opacity duration-1000"
+            className="w-full h-full object-cover opacity-70 transition-opacity duration-1000"
             alt="background"
           />
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-bg-primary via-bg-primary/40 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-bg-primary via-bg-primary to-transparent" />
         </div>
 
         <div className="relative z-20 w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-right mt-10 lg:mt-0 space-y-4 md:space-y-6 lg:pl-12">
