@@ -2,11 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { motion, PanInfo } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CategorySection from "@/components/CategorySection";
 import Badge from "@/components/Badge";
+import Logo from "@/public/logo/dinisir-head.jpg";
 
 
 const movieData = [
@@ -53,17 +57,52 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-bg-primary text-text-primary flex flex-col items-center overflow-x-hidden" dir="rtl">
-      <div className="relative w-full min-h-[80vh] lg:h-screen flex flex-col lg:flex-row items-center lg:justify-between justify-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 2xl:px-32 overflow-hidden">
-        
+    <main className="min-h-screen flex flex-col items-center overflow-x-hidden" dir="rtl">
+      <div className="absolute top-0 inset-x-0 z-50 flex justify-between items-center p-4 md:p-6 lg:px-12 xl:px-14">
+        <Link href="/" className="flex items-center gap-2 group">
+          <div className="relative overflow-hidden rounded-xl shadow-lg transition-transform group-hover:scale-105">
+            <Image 
+              src={Logo} 
+              alt="logo" 
+              className="w-8 h-8 md:w-10 md:h-10 object-cover"
+            />
+          </div>
+          <p className="text-lg md:text-xl font-black text-blue-bold tracking-tighter">
+            DINLOAD
+          </p>
+        </Link>
+
+        <Link 
+          href="/profile" 
+          className="
+            flex items-center gap-2 
+            p-1 md:pr-3 md:pl-1
+            rounded-full 
+            bg-bg-dark/20 backdrop-blur-md border border-text-primary/5
+            hover:bg-text-primary/10 transition-all active:scale-95
+          "
+        >
+          <p className="hidden md:block text-sm lg:text-base font-bold whitespace-nowrap mb-0.5">
+            علی شیخ بهایی
+          </p>
+          
+          <AccountCircleIcon 
+            sx={{ 
+              fontSize: { xs: 32, md: 40 },
+              color: 'white' 
+            }} 
+          />
+        </Link>
+      </div>
+      <div className="relative w-full min-h-[85vh] lg:h-screen flex flex-col lg:flex-row items-center lg:justify-between justify-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 2xl:px-32 overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
             key={`bg-${index}`}
             src={images[index]}
-            className="w-full h-full object-cover opacity-70 transition-opacity duration-1000"
+            className="w-full h-full object-cover opacity-60 transition-opacity duration-1000"
             alt="background"
           />
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-bg-primary via-bg-primary to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-bg-primary via-bg-primary to-transparent" />
         </div>
 
         <div className="relative z-20 w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-right mt-10 lg:mt-0 space-y-4 md:space-y-6 lg:pl-12">
@@ -102,7 +141,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative z-20 w-full lg:w-1/2 h-[40vh] sm:h-[45vh] lg:h-full flex items-center justify-center cursor-grab active:cursor-grabbing select-none" dir="ltr">
+        <div className="relative z-20 w-full lg:w-1/2 h-[40vh] sm:h-[45vh] lg:h-full flex items-center justify-center cursor-grab active:cursor-grabbing select-none">
           {images.map((img, i) => {
             let position = i - index;
             if (position > 2) position -= images.length;
@@ -115,7 +154,7 @@ export default function Home() {
             else if (absPos === 1) scale = width < 640 ? 0.9 : 1;
             else if (absPos === 2) scale = width < 640 ? 0.6 : 0.7;
             
-            const baseWidth = width < 400 ? 100 : width < 640 ? 130 : width < 1280 ? 140 : width < 1920 ? 160 : 220;
+            const baseWidth = width < 400 ? 105 : width < 640 ? 140 : width < 1280 ? 150 : width < 1920 ? 170 : 220;
             const height = baseWidth * 1.5; 
             const step = baseWidth * (width < 640 ? 0.7 : 0.9); 
 
@@ -136,7 +175,7 @@ export default function Home() {
                 className="absolute"
                 style={{ pointerEvents: absPos > 1 ? "none" : "auto" }}
               >
-                <div className={`relative group overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] ${absPos === 0 ? 'ring-1 ring-text-primary/60' : ''}`}>
+                <div className={`relative group overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] ${absPos === 0 ? 'ring-2 ring-text-primary/50' : ''}`}>
                   <img
                     src={img}
                     className="object-cover pointer-events-none"
@@ -161,7 +200,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full bg-bg-primary relative z-30 -mt-20 pt-20 flex flex-col gap-8">
+      <div className="w-full relative z-30 flex flex-col -mt-5 gap-10">
         <CategorySection 
           title="آخرین فیلم‌ها" 
           items={[...movieData, ...movieData].map((m, i) => ({
