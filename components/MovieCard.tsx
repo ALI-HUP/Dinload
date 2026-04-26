@@ -20,25 +20,18 @@ export default function MovieCard({ title, image, year, genre, score = "8.5" }: 
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" 
         />
         
-        <div className="absolute inset-0 bg-linear-to-t from-bg-dark via-bg-dark/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col items-center justify-between p-5">
-            
-            <div className="h-5 w-full" />
-            <PlayCircleIcon 
-              sx={{ fontSize: 40 }} 
-              className="text-text-primary drop-shadow-2xl transition-transform duration-500 scale-50 group-hover:scale-100" 
-            />
-            
-            <div className="flex flex-wrap justify-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-              <Badge variant="blue">
-                {genre}
-              </Badge>
-              <Badge variant="yellow">
-                {score}
-              </Badge>
-              <Badge variant="white">
-                {year}
-              </Badge>
-            </div>
+        <div className="absolute inset-0 bg-linear-to-t from-bg-dark via-bg-dark/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col gap-2 items-center justify-end p-5">
+          <Badge variant="blue">
+            {genre}
+          </Badge>
+          <div className="flex gap-2">
+            <Badge variant="yellow">
+              {score}
+            </Badge>
+            <Badge variant="white">
+              {year}
+            </Badge>
+          </div>
         </div>
       </div>
       
