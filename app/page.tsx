@@ -7,6 +7,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CategorySection from "@/components/CategorySection";
 import Badge from "@/components/Badge";
@@ -136,6 +137,7 @@ export default function Home() {
             <Button 
               variant="primary" 
               text="تماشا کنید" 
+              icon={<VisibilityIcon sx={{ fontSize: { xs: 18, sm: 20, md: 24 } }} />}
               onClick={() => console.log("Watch Clicked")} 
             />
           </div>

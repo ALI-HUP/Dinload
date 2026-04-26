@@ -1,3 +1,5 @@
+import Button from "@/components/Button";
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import MovieCard from "./MovieCard";
 
 interface CategoryProps {
@@ -15,9 +17,10 @@ export default function CategorySection({ title, items }: CategoryProps) {
             {title}
           </h2>
         </div>
-        <button className="text-[10px] md:text-xs font-black uppercase tracking-widest text-blue-primary hover:bg-blue-primary/10 px-3 py-1.5 md:px-4 md:py-2 rounded-full transition-all border border-blue-primary/20 md:border-none">
-          مشاهده همه
-        </button>
+        <Button
+          variant="secondary" 
+          text="مشاهده همه" 
+        />
       </div>
 
       <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-2 gap-y-6 sm:gap-x-4 sm:gap-y-8 md:gap-x-6 md:gap-y-10">

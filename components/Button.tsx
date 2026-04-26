@@ -1,15 +1,15 @@
 "use client";
 
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import AddIcon from '@mui/icons-material/Add';
+import React from "react";
 
 interface ButtonProps {
   variant: "primary" | "secondary";
   text?: string;
   onClick?: () => void;
+  icon?: React.ReactNode;
 }
 
-export default function Button({ variant, text, onClick }: ButtonProps) {
+export default function Button({ variant, text, onClick, icon }: ButtonProps) {
   if (variant === "primary") {
     return (
       <button 
@@ -23,9 +23,7 @@ export default function Button({ variant, text, onClick }: ButtonProps) {
           whitespace-nowrap
         "
       >
-        <VisibilityIcon 
-          sx={{ fontSize: { xs: 18, sm: 20, md: 24 } }} 
-        />
+        {icon}
         <span>{text}</span>
       </button>
     );
@@ -42,9 +40,8 @@ export default function Button({ variant, text, onClick }: ButtonProps) {
         text-text-primary shadow-lg
       "
     >
-      <AddIcon 
-        sx={{ fontSize: { xs: 20, sm: 24, md: 28 } }} 
-      />
+      {icon}
+      <span>{text}</span>
     </button>
   );
 }
