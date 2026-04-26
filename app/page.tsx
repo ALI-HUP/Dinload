@@ -58,14 +58,14 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center overflow-x-hidden" dir="rtl">
+    <main className="min-h-screen flex flex-col items-center mb-20 overflow-x-hidden" dir="rtl">
       <div className="absolute top-0 inset-x-0 z-50 flex justify-between items-center p-4 md:p-6 lg:px-12 xl:px-14">
         <Link href="/" className="flex items-center gap-2 group">
           <div className="relative overflow-hidden rounded-xl shadow-lg transition-transform group-hover:scale-105">
             <Image 
               src={Logo} 
               alt="logo" 
-              className="w-8 h-8 md:w-10 md:h-10 object-cover"
+              className="w-9 h-9 md:w-12 md:h-12 object-cover"
             />
           </div>
           <p className="text-lg md:text-xl font-black text-blue-bold tracking-tighter">
