@@ -12,19 +12,13 @@ export default function Footer() {
   const [query, setQuery] = useState("");
 
   const inputRef = useRef<HTMLInputElement | null>(null);
-
   const isOverlayOpen = isSearchOpen || isMenuOpen;
 
   useEffect(() => {
     if (!inputRef.current) return;
-
     const el = inputRef.current;
-    el.scrollTo({
-      left: el.scrollWidth,
-      behavior: "auto",
-    });
+    el.scrollTo({ left: el.scrollWidth, behavior: "auto" });
   }, [query]);
-
 
 
   return (
@@ -47,7 +41,7 @@ export default function Footer() {
           </div>
 
           <div
-            className="absolute z-30 w-[25%] transition-all duration-500 ease-in-out flex items-center justify-center"
+            className="absolute z-30 w-[25%] transition-all duration-200 ease-in-out flex items-center justify-center"
             style={{ right: isSearchOpen ? "0%" : "25%" }}
           >
             <button
@@ -55,7 +49,7 @@ export default function Footer() {
                 setIsMenuOpen(false);
                 setIsSearchOpen(true);
               }}
-              className="flex items-center justify-center p-3 rounded-full hover:bg-text-secondary/20 transition"
+              className="flex items-center justify-center p-3 rounded-full  active:scale-120 transition"
             >
               <SearchIcon fontSize="medium" />
             </button>
@@ -63,7 +57,7 @@ export default function Footer() {
 
           <Link
             href="/"
-            className={`flex items-center justify-center p-3 rounded-full hover:bg-text-secondary/20 transition duration-500 ${
+            className={`flex items-center justify-center p-3 active:scale-120 rounded-full transition duration-200 ${
               isSearchOpen ? "opacity-0 scale-50 pointer-events-none" : "opacity-100"
             }`}
           >
@@ -76,7 +70,7 @@ export default function Footer() {
 
           <Link
             href="/"
-            className={`flex items-center justify-center p-3 rounded-full hover:bg-text-secondary/20 transition duration-500 ${
+            className={`flex items-center justify-center p-3 active:scale-120 rounded-full transition duration-200 ${
               isSearchOpen ? "opacity-0 scale-50 pointer-events-none" : "opacity-100"
             }`}
           >
@@ -94,7 +88,7 @@ export default function Footer() {
                   setIsMenuOpen(true);
                 }
               }}
-              className="w-full h-full flex items-center justify-center p-3 rounded-full hover:bg-text-secondary/20 transition"
+              className="w-full h-full flex items-center active:scale-120 justify-center p-3 rounded-full transition"
             >
               <div className="relative w-6 h-6 flex items-center justify-center">
 
@@ -120,7 +114,7 @@ export default function Footer() {
           </div>
 
           <div
-            className={`absolute transition-all duration-500 ease-in-out flex items-center ${
+            className={`absolute transition-all duration-200 ease-in-out flex items-center ${
               isSearchOpen
                 ? "opacity-100 translate-x-0 w-[70%] sm:w-[60%] md:w-[50%]"
                 : "opacity-0 translate-x-10 pointer-events-none"
@@ -182,7 +176,6 @@ export default function Footer() {
           <Link href="/" className="w-1/4 text-center py-3 text-xs xs:text-xs sm:text-sm md:text-base">
             راه ارتباطی
           </Link>
-
         </div>
       </div>
     </>
