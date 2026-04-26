@@ -75,7 +75,7 @@ export default function Home() {
               className="w-9 h-9 md:w-12 md:h-12 object-cover"
             />
           </div>
-          <p className="text-lg md:text-xl font-black text-blue-bold tracking-tighter">
+          <p className="text-lg md:text-xl font-black text-blue-bold tracking-tighter transition-transform group-hover:scale-105">
             DINLOAD
           </p>
         </Link>
