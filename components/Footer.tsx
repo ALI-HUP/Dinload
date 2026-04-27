@@ -168,26 +168,25 @@ export default function Footer() {
         }`}
       >
         <div className="relative w-full flex items-center text-text-primary overflow-hidden">
-
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-text-secondary left-1/4" />
             <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-text-secondary left-2/4" />
             <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-text-secondary left-3/4" />
           </div>
 
-          <Link href="/" className="w-1/4 text-center py-3 text-xs xs:text-xs sm:text-sm md:text-base">
+          <Link href="/category" className="w-1/4 text-center py-3 text-xs sm:text-sm md:text-base">
             دسته بندی
           </Link>
 
-          <Link href="/" className="w-1/4 text-center py-3 text-xs xs:text-xs sm:text-sm md:text-base">
+          <Link href="/subscription" className="w-1/4 text-center py-3 text-xs sm:text-sm md:text-base">
             اشتراک
           </Link>
 
-          <Link href="/" className="w-1/4 text-center py-3 text-xs xs:text-xs sm:text-sm md:text-base">
+          <Link href="/messages" className="w-1/4 text-center py-3 text-xs sm:text-sm md:text-base">
             پیام‌ها
           </Link>
 
-          <Link href="/" className="w-1/4 text-center py-3 text-xs xs:text-xs sm:text-sm md:text-base">
+          <Link href="/contact" className="w-1/4 text-center py-3 text-xs sm:text-sm md:text-base">
             راه ارتباطی
           </Link>
         </div>
