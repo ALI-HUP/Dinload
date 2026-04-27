@@ -26,7 +26,7 @@ export default function MovieCard({ title, image, year, genre, score = "8.5" }: 
           </Badge>
           <div className="flex gap-2">
             <Badge variant="yellow">
-              {score}
+              {score} ★
             </Badge>
             <Badge variant="white">
               {year}
@@ -35,9 +35,9 @@ export default function MovieCard({ title, image, year, genre, score = "8.5" }: 
         </div>
       </div>
       
-      <div className="mt-3 flex flex-col gap-1">
+      <div className="mt-3 flex flex-col gap-1" dir='ltr'>
         <div className="flex items-center justify-between">
-            <h3 className="text-[10px] md:text-xs font-bold uppercase tracking-tighter text-text-primary group-hover:text-blue-bold transition-colors duration-300 line-clamp-3 leading-tight min-h-[2.2rem] md:min-h-10">
+            <h3 className="text-xs md:text-sm pl-1 font-bold uppercase tracking-tighter text-text-primary group-hover:text-blue-bold transition-colors duration-300 line-clamp-3 leading-tight min-h-[2.2rem] md:min-h-10">
                 {title} ({year})
             </h3>
         </div>

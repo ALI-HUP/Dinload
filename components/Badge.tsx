@@ -19,16 +19,13 @@ export default function Badge({ variant, children, className = "" }: BadgeProps)
     <span
       className={`
         px-2 py-1 rounded-md border 
-        text-[10px] md:text-xs font-bold uppercase tracking-tight
+        text-xs md:text-sm font-bold uppercase tracking-tight
         flex items-center gap-1
         ${styles[variant]}
         ${className}
       `}
     >
       {children}
-      {variant === "yellow" && (
-        <span className="text-[8px] md:text-[10px] -mb-0.5">★</span>
-      )}
     </span>
   );
 }

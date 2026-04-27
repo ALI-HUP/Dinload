@@ -113,7 +113,7 @@ export default function Home() {
           <h1
             className="font-black tracking-tighter drop-shadow-2xl uppercase leading-none line-clamp-3 overflow-hidden text-balance"
             style={{ 
-              fontSize: "clamp(1.5rem, 5vw, 4rem)",
+              fontSize: "clamp(2rem, 5vw, 4rem)",
               maxWidth: "100%",
               maxHeight: "4.5em" 
             }}
@@ -127,7 +127,7 @@ export default function Home() {
             </Badge>
             
             <Badge variant="yellow">
-              8.5
+              8.5 ★
             </Badge>
             
             <Badge variant="white">
@@ -138,7 +138,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <Button 
               variant="white" 
-              text="تماشا کنید" 
+              text="تماشا کنید"
               icon={<VisibilityIcon sx={{ fontSize: { xs: 18, sm: 20, md: 24 } }} />}
               onClick={() => console.log("Watch Clicked")} 
             />

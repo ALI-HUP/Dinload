@@ -13,7 +13,7 @@ export default function CategorySection({ title, items }: CategoryProps) {
       <div className="flex items-center justify-between mb-6 md:mb-8">
         <div className="flex items-center gap-3 md:gap-4">
           <div className="h-6 w-1 md:h-8 md:w-1.5 bg-blue-primary rounded-full shadow-[0_0_15px_rgba(2,132,199,0.5)]" />
-          <h2 className="text-lg sm:text-xl md:text-3xl font-black uppercase tracking-tighter italic">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tighter italic">
             {title}
           </h2>
         </div>
