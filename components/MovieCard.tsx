@@ -21,17 +21,24 @@ export default function MovieCard({ title, image, year, genre, score = "8.5" }: 
         />
         
         <div className="absolute inset-0 bg-linear-to-t from-bg-dark via-bg-dark/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col gap-2 items-center justify-end p-5">
-          <Badge variant="blue">
+          <Badge
+            variant="blue"
+            className="p-1 text-xs md:text-sm"
+          >
             {genre}
           </Badge>
-          <div className="flex gap-2">
-            <Badge variant="yellow">
-              {score} ★
-            </Badge>
-            <Badge variant="white">
-              {year}
-            </Badge>
-          </div>
+          <Badge
+            variant="yellow"
+            className="p-1 text-xs md:text-sm"
+          >
+            {score} ★
+          </Badge>
+          <Badge
+            variant="white"
+            className="p-1 text-xs md:text-sm"
+          >
+            {year}
+          </Badge>
         </div>
       </div>
       
