@@ -221,8 +221,31 @@ export default function Home() {
           title="سریال‌های بروز" 
           items={[...movieData, ...movieData].map((m, i) => ({
             ...m,
-            image: images[(i + 2) % images.length],
-            genre: "Series",
+            image: images[i % images.length],
+          }))} 
+        />
+
+        <div className="w-full max-w-6xl px-12 opacity-20">
+          <div className="h-0.5 w-full bg-linear-to-r from-transparent via-text-primary to-transparent" />
+        </div>
+
+        <CategorySection 
+          title="انیمیشن‌ها" 
+          items={[...movieData, ...movieData].map((m, i) => ({
+            ...m,
+            image: images[i % images.length],
+          }))} 
+        />
+
+        <div className="w-full max-w-6xl px-12 opacity-20">
+          <div className="h-0.5 w-full bg-linear-to-r from-transparent via-text-primary to-transparent" />
+        </div>
+
+        <CategorySection 
+          title="انیمه" 
+          items={[...movieData, ...movieData].map((m, i) => ({
+            ...m,
+            image: images[i % images.length],
           }))} 
         />
       </div>
