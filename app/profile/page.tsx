@@ -66,7 +66,7 @@ export default function ProfilePage() {
 
       <section className="w-full max-w-7xl px-4 md:px-8 lg:px-12 py-8 flex flex-col gap-8">
         
-        <div className="w-full bg-bg-light backdrop-blur-2xl border border-blue-bold/50 rounded-4xl p-8 md:p-12">
+        <div className="w-full bg-bg-light backdrop-blur-2xl border border-blue-bold rounded-4xl p-8 md:p-12">
           <h2 className="text-2xl font-black mb-10 flex items-center gap-3">
             <span className="w-2 h-8 bg-blue-bold rounded-full" />
             اطلاعات کاربری
@@ -75,8 +75,8 @@ export default function ProfilePage() {
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="flex flex-col items-center gap-4 self-center lg:self-start">
               <div className="relative group">
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-blue-bold/10 border-2 border-dashed border-blue-bold/30 flex items-center justify-center overflow-hidden">
-                  <AccountCircleIcon sx={{ fontSize: 100 }} className="text-blue-bold/20" />
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-blue-bold/10 border-2 border-blue-bold/50 flex items-center justify-center overflow-hidden">
+                  <AccountCircleIcon sx={{ fontSize: 100 }} className="text-blue-bold" />
                 </div>
                 <Button 
                   variant="blue" 
@@ -144,6 +144,10 @@ export default function ProfilePage() {
                   />
                 </div>
               </div>
+
+              <div className="text-xs text-text-secondary">
+                در صورت علاقه به تغییر رمز عبور، هر دو فیلد را پر کنید. در غیر این صورت، این فیلدها را خالی بگذارید.
+              </div>
               
               <div className="md:col-span-2 flex justify-center lg:justify-start pt-2">
                 <Button 
@@ -157,7 +161,7 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        <div className="w-full bg-bg-light backdrop-blur-2xl border border-blue-bold/50 rounded-4xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-10">
+        <div className="w-full bg-bg-light backdrop-blur-2xl border border-blue-bold rounded-4xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-10">
           
           <div className="relative flex items-center justify-center w-36 h-36 md:w-40 md:h-40">
             <svg className="w-full h-full transform -rotate-90">
