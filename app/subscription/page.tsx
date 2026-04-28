@@ -1,5 +1,6 @@
 "use client";
 
+import { cloneElement } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
@@ -58,41 +59,45 @@ export default function SubscriptionPage() {
                 تماشای آنلاین نیازی به اشتراک ندارد و <span className="text-blue-bold">رایگان</span> است.
                 </p>
             </div>
-            
+
             <p className="text-text-primary/60 font-bold mt-2">
                 برای حمایت از ما و دسترسی به لینک‌های دانلود پرسرعت، یکی از پلن‌های زیر را انتخاب کنید:
             </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {plans.map((plan) => (
             <button 
               key={plan.id}
               className={`
-                relative overflow-hidden group flex flex-col items-center justify-center gap-6
-                aspect-square rounded-[3rem] bg-bg-light backdrop-blur-2xl transition-all duration-300
-                border-2 ${plan.isBestValue ? 'border-yellow-500/50 shadow-[0_0_30px_rgba(234,179,8,0.1)]' : 'border-blue-bold/50'}
-                hover:border-blue-bold hover:scale-[1.05]
+                relative overflow-hidden group flex flex-col items-center justify-center gap-3 md:gap-6
+                aspect-square rounded-4xl md:rounded-[3rem] bg-bg-light backdrop-blur-2xl transition-all duration-300
+                border-2 ${plan.isBestValue ? 'border-yellow-500/50 shadow-lg' : 'border-blue-bold/50'}
+                hover:border-blue-bold hover:scale-[1.02] active:scale-95
               `}
             >
               <div className={`absolute inset-0 bg-linear-to-br ${plan.color} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               
               {plan.isBestValue && (
-                <div className="absolute top-6 left-6 bg-yellow-500 text-bg-dark text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter shadow-lg">
+                <div className="absolute top-3 left-3 md:top-6 md:left-6 bg-yellow-500 text-bg-dark text-[8px] md:text-[10px] font-black px-2 py-0.5 md:px-3 md:py-1 rounded-full uppercase tracking-tighter shadow-lg z-20">
                   بهترین قیمت
                 </div>
               )}
 
               <div className={`
-                relative z-10 p-5 rounded-3xl transition-all duration-300 shadow-xl
+                relative z-10 p-3 md:p-5 rounded-2xl md:rounded-3xl transition-all duration-300 shadow-xl
                 ${plan.isBestValue ? 'bg-yellow-500/20 text-yellow-500 group-hover:bg-yellow-500' : 'bg-blue-bold/10 text-blue-bold group-hover:bg-blue-bold'}
                 group-hover:text-text-primary
               `}>
-                {plan.icon}
+                {typeof plan.icon === 'object' ? 
+                cloneElement(plan.icon as React.ReactElement, { 
+                    sx: { fontSize: { xs: '28px', md: '40px' } } 
+                } as any) : plan.icon
+                }
               </div>
 
               <div className="relative z-10 flex flex-col items-center">
-                <span className="text-xl md:text-2xl font-black text-text-primary">
+                <span className="text-lg md:text-2xl font-black text-text-primary whitespace-nowrap">
                   {plan.fa}
                 </span>
               </div>

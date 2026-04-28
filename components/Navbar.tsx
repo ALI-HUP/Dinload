@@ -27,7 +27,7 @@ export default function Navbar({ variant, userName = "علی شیخ بهایی" 
       case "logout":
         return (
           <button onClick={() => console.log("Logout Logic")} className="flex items-center gap-2 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full bg-red-500/10 backdrop-blur-md border border-red-500/30 hover:bg-red-500/20 text-red-500 transition-all active:scale-95 group">
-            <p className="text-[10px] sm:text-xs md:text-base font-black whitespace-nowrap mb-0.5">خروج از حساب</p>
+            <p className="text-sm lg:text-base font-bold whitespace-nowrap mb-0.5">خروج از حساب</p>
             <LogoutIcon sx={{ fontSize: { xs: 18, md: 24 } }} />
           </button>
         );
@@ -35,7 +35,7 @@ export default function Navbar({ variant, userName = "علی شیخ بهایی" 
       case "return":
         return (
           <Link href="/" className="flex items-center gap-2 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full bg-text-primary/10 border border-text-primary/30 text-text-primary transition-all active:scale-95">
-            <p className="text-[10px] sm:text-xs md:text-base font-black whitespace-nowrap mb-0.5">بازگشت</p>
+            <p className="text-sm lg:text-base font-bold whitespace-nowrap mb-0.5">بازگشت</p>
             <ArrowBackIcon sx={{ fontSize: { xs: 18, md: 24 } }} />
           </Link>
         );
