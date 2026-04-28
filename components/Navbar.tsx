@@ -37,7 +37,7 @@ export default function Navbar({
     switch (variant) {
       case "profile":
         return (
-          <Link href="/profile" className="flex items-center gap-2 p-1 pr-2 md:pr-3 md:pl-1 rounded-full bg-bg-dark/20 backdrop-blur-md border border-text-primary/30 hover:bg-text-primary/10 transition-all active:scale-95">
+          <Link href="/profile" className="flex items-center gap-2 p-1 pr-2 md:pr-3 md:pl-1 rounded-full bg-text-primary/10 border border-text-primary/30 hover:bg-text-primary/30 transition-all active:scale-95">
             <p className="text-sm lg:text-base font-bold whitespace-nowrap mb-0.5">{userName}</p>
             <AccountCircleIcon sx={{ fontSize: { xs: 32, md: 40 }, color: 'white' }} />
           </Link>
@@ -45,7 +45,7 @@ export default function Navbar({
       
       case "logout":
         return (
-          <button onClick={() => console.log("Logout Logic")} className="flex items-center gap-2 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full bg-red-500/10 backdrop-blur-md border border-red-500/30 hover:bg-red-500/20 text-red-500 transition-all active:scale-95 group">
+          <button onClick={() => console.log("Logout Logic")} className="flex items-center gap-2 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full bg-red-500/10 border border-red-500/30 hover:bg-red-500/30 text-red-500 transition-all active:scale-95">
             <p className="text-sm lg:text-base font-bold whitespace-nowrap mb-0.5">خروج از حساب</p>
             <LogoutIcon sx={{ fontSize: { xs: 18, md: 24 } }} />
           </button>
@@ -53,7 +53,7 @@ export default function Navbar({
 
       case "return":
         return (
-          <Link href="/" className="flex items-center gap-2 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full bg-text-primary/10 border border-text-primary/30 text-text-primary transition-all active:scale-95">
+          <Link href="/" className="flex items-center gap-2 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full bg-text-primary/10 border border-text-primary/30 hover:bg-text-primary/30 transition-all active:scale-95">
             <p className="text-sm lg:text-base font-bold whitespace-nowrap mb-0.5">بازگشت</p>
             <ArrowBackIcon sx={{ fontSize: { xs: 18, md: 24 } }} />
           </Link>
@@ -83,7 +83,7 @@ export default function Navbar({
         <div className="relative" ref={dropdownRef}>
           <button 
             onClick={() => setShowNotifs(!showNotifs)}
-            className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-text-primary/10 border border-text-primary/20 text-text-primary hover:bg-text-primary/20 transition-all active:scale-90"
+            className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-text-primary/10 border border-text-primary/30 hover:bg-text-primary/30 transition-all active:scale-95"
           >
             <NotificationsIcon sx={{ fontSize: { xs: 22, md: 26 } }} />
             
