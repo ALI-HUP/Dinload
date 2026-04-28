@@ -174,7 +174,7 @@ export default function Footer() {
             <div className="absolute top-1/2 -translate-y-1/2 h-5 w-px bg-text-secondary left-3/4" />
           </div>
 
-          <Link href="/category" className="w-1/4 text-center py-3 text-xs sm:text-sm md:text-base">
+          <Link href="/categories" className="w-1/4 text-center py-3 text-xs sm:text-sm md:text-base">
             دسته بندی
           </Link>
 

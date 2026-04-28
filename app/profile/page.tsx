@@ -46,8 +46,7 @@ export default function ProfilePage() {
           </p>
         </Link>
 
-        <button 
-          onClick={() => console.log("Logout")}
+        <Link href="/"
           className="
             flex items-center gap-2 
             px-3 py-1.5 md:px-5 md:py-2.5
@@ -60,8 +59,8 @@ export default function ProfilePage() {
           <p className="text-sm lg:text-base font-bold whitespace-nowrap mb-0.5 text-red-500">
             خروج از حساب
           </p>
-          <LogoutIcon className="text-red-500" sx={{ fontSize: { xs: 18, md: 24 } }} />
-        </button>
+          <LogoutIcon sx={{ fontSize: { xs: 20, md: 26 }, color: 'red' }} />
+        </Link>
       </nav>
 
       <section className="w-full max-w-7xl px-4 md:px-8 lg:px-12 py-8 flex flex-col gap-8">

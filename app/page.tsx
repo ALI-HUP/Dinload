@@ -80,14 +80,12 @@ export default function Home() {
           </p>
         </Link>
 
-        <Link 
-          href="/profile" 
+        <Link href="/profile" 
           className="
             flex items-center gap-2 
             p-1 pr-2 md:pr-3 md:pl-1
-            rounded-full 
-            bg-bg-dark/20 backdrop-blur-md border border-text-primary/30
-            hover:bg-text-primary/10 transition-all active:scale-95
+            rounded-full bg-text-primary/10 backdrop-blur-md border border-text-primary/30
+            hover:bg-text-primary/20 hover:border-text-primary/50 transition-all active:scale-95 group
           "
         >
           <p className="text-sm lg:text-base font-bold whitespace-nowrap mb-0.5">
