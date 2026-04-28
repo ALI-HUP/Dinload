@@ -2,16 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { motion, PanInfo } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CategorySection from "@/components/CategorySection";
 import Badge from "@/components/Badge";
-import Logo from "@/public/logo/dinisir-head.jpg";
+import Navbar from "@/components/Navbar";
 
 
 const movieData = [
@@ -59,41 +56,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col items-center mb-20 overflow-x-hidden" dir="rtl">
-      <div className="w-full flex justify-between items-center p-5 md:px-12 lg:px-20 z-50">
-        <Link href="/" className="flex items-center gap-2 group"
-          onClick={(e) => {
-            if (window.location.pathname === "/") {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }
-          }}
-        >
-          <div className="relative overflow-hidden rounded-xl shadow-lg transition-transform group-hover:scale-105">
-            <Image 
-              src={Logo} 
-              alt="logo" 
-              className="w-9 h-9 md:w-12 md:h-12 object-cover"
-            />
-          </div>
-          <p className="text-lg md:text-xl font-black text-blue-bold tracking-tighter transition-transform group-hover:scale-105">
-            DINLOAD
-          </p>
-        </Link>
-
-        <Link href="/profile" 
-          className="
-            flex items-center gap-2 
-            p-1 pr-2 md:pr-3 md:pl-1
-            rounded-full bg-text-primary/10 backdrop-blur-md border border-text-primary/30
-            hover:bg-text-primary/20 hover:border-text-primary/50 transition-all active:scale-95 group
-          "
-        >
-          <p className="text-sm lg:text-base font-bold whitespace-nowrap mb-0.5">
-            علی شیخ بهایی
-          </p>
-          <AccountCircleIcon sx={{ fontSize: { xs: 32, md: 40 }, color: 'white' }} />
-        </Link>
-      </div>
+      <Navbar variant="profile" />
 
       <div className="relative w-full -mt-22 min-h-[85vh] lg:h-screen flex flex-col lg:flex-row items-center lg:justify-between justify-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 2xl:px-32 overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none">

@@ -14,6 +14,7 @@ import Footer from "@/components/Footer";
 import Logo from "@/public/logo/dinisir-head.jpg";
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import LogoutIcon from '@mui/icons-material/Logout';
+import Navbar from "@/components/Navbar";
 
 
 export default function ProfilePage() {
@@ -25,43 +26,7 @@ export default function ProfilePage() {
 
   return (
     <main className="min-h-screen flex mb-20 flex-col items-center">
-      <nav className="w-full flex justify-between items-center p-5 md:px-12 lg:px-20 z-50">
-        <Link href="/" className="flex items-center gap-2 group"
-          onClick={(e) => {
-            if (window.location.pathname === "/") {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }
-          }}
-        >
-          <div className="relative overflow-hidden rounded-xl shadow-lg transition-transform group-hover:scale-105">
-            <Image 
-              src={Logo} 
-              alt="logo" 
-              className="w-9 h-9 md:w-12 md:h-12 object-cover"
-            />
-          </div>
-          <p className="text-lg md:text-xl font-black text-blue-bold tracking-tighter transition-transform group-hover:scale-105">
-            DINLOAD
-          </p>
-        </Link>
-
-        <Link href="/"
-          className="
-            flex items-center gap-2 
-            px-3 py-1.5 md:px-5 md:py-2.5
-            rounded-full
-            bg-red-500/10 backdrop-blur-md border border-red-500/30
-            hover:bg-red-500/20 hover:border-red-500/50 transition-all active:scale-95
-            group
-          "
-        >
-          <p className="text-sm lg:text-base font-bold whitespace-nowrap mb-0.5 text-red-500">
-            خروج از حساب
-          </p>
-          <LogoutIcon sx={{ fontSize: { xs: 20, md: 26 }, color: 'red' }} />
-        </Link>
-      </nav>
+      <Navbar variant="logout" />
 
       <section className="w-full max-w-7xl px-4 md:px-8 lg:px-12 py-8 flex flex-col gap-8">
         

@@ -16,6 +16,7 @@ import GavelIcon from '@mui/icons-material/Gavel';
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 import StarIcon from '@mui/icons-material/Star';
 import AnimationIcon from '@mui/icons-material/Animation'; 
+import Navbar from "@/components/Navbar";
 
 
 const categories = [
@@ -36,19 +37,7 @@ export default function CategoriesPage() {
 
   return (
     <main className="min-h-screen flex flex-col items-center bg-bg-primary" dir="rtl">
-      <nav className="w-full flex justify-between items-center p-5 md:px-12 lg:px-20 z-50">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative overflow-hidden rounded-xl shadow-lg transition-transform group-hover:scale-105">
-            <Image src={Logo} alt="logo" className="w-9 h-9 md:w-12 md:h-12 object-cover" />
-          </div>
-          <p className="text-lg md:text-xl font-black text-blue-bold tracking-tighter">DINLOAD</p>
-        </Link>
-
-        <Link href="/" className="flex items-center gap-2 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full bg-text-primary/10 border border-text-primary/30 text-text-primary transition-all active:scale-95 group">
-          <p className="text-[10px] sm:text-xs md:text-base font-black whitespace-nowrap">بازگشت</p>
-          <ArrowBackIcon sx={{ fontSize: { xs: 18, md: 24 } }} />
-        </Link>
-      </nav>
+      <Navbar variant="return" />
 
       <section className="w-full max-w-7xl px-5 md:px-12 lg:px-20 py-10 flex flex-col gap-10 mb-20">
         
