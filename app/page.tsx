@@ -56,7 +56,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center mb-20 overflow-x-hidden" dir="rtl">
+    <main className="min-h-screen flex flex-col items-center overflow-x-hidden" dir="rtl">
       <Navbar variant="profile" />
 
       <div className="relative w-full -mt-22 min-h-[85vh] lg:h-screen flex flex-col lg:flex-row items-center lg:justify-between justify-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 2xl:px-32 overflow-hidden">

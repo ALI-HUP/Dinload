@@ -10,7 +10,7 @@ import EmailIcon from '@mui/icons-material/Email';
 
 export default function SiteMap() {
   return (
-    <section className="w-full bg-bg-light/50 py-10">
+    <section className="w-full bg-bg-light/50 py-10 pb-20">
       <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         
         <div className="flex flex-col gap-6">

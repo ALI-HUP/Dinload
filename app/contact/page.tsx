@@ -8,6 +8,7 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import EmailIcon from '@mui/icons-material/Email';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
+import SiteMap from "@/components/SiteMap";
 
 const contactMethods = [
   { 
@@ -104,6 +105,7 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <SiteMap />
       <Footer />
     </main>
   );
