@@ -9,6 +9,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import CategorySection from "@/components/CategorySection";
 import Badge from "@/components/Badge";
 import Navbar from "@/components/Navbar";
+import SiteMap from "@/components/SiteMap";
 
 
 const movieData = [
@@ -211,8 +212,7 @@ export default function Home() {
         />
       </div>
 
-      <Footer />
-
+      <SiteMap />
       <Footer />
     </main>
   );

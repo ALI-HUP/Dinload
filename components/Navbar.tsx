@@ -17,7 +17,7 @@ interface NavbarProps {
 
 export default function Navbar({ 
   variant, 
-  userName = "علی شیخ بهایی",
+  userName = "username",
   notificationCount = 2
 }: NavbarProps) {
   const [showNotifs, setShowNotifs] = useState(false);

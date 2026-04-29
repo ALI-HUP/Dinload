@@ -57,7 +57,7 @@ export default function ProfilePage() {
                 <label className="text-xs font-bold mr-2">نام کاربری</label>
                 <div className="relative">
                   <PersonIcon className="absolute left-4 top-1/2 -translate-y-1/2 text-text-primary" />
-                  <input type="text" defaultValue="علی شیخ بهایی" className="w-full bg-text-primary/5 border border-text-primary/10 rounded-2xl py-4 pr-5 pl-12 font-bold focus:border-blue-bold outline-none transition-all" />
+                  <input type="text" defaultValue="username" className="w-full bg-text-primary/5 border border-text-primary/10 rounded-2xl py-4 pr-5 pl-12 font-bold focus:border-blue-bold outline-none transition-all" />
                 </div>
               </div>
 
