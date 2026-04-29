@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { cloneElement, useState } from "react";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import Link from "next/link";
@@ -11,9 +10,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import PersonIcon from '@mui/icons-material/Person';
 import Footer from "@/components/Footer";
-import Logo from "@/public/logo/dinisir-head.jpg";
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import LogoutIcon from '@mui/icons-material/Logout';
+import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import Navbar from "@/components/Navbar";
 import SiteMap from "@/components/SiteMap";
 
@@ -155,6 +153,42 @@ export default function ProfilePage() {
           />
         </div>
 
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
+          {[
+            { id: 1, fa: "ذخیره شده‌ها", en: "Bookmarks", icon: <VisibilityIcon />, link: "/profile/bookmarks", color: "from-blue-500/20" },
+            { id: 2, fa: "کامنت‌های من", en: "My Comments", icon: <EditIcon />, link: "/profile/comments", color: "from-purple-500/20" },
+            { id: 3, fa: "تیکت‌های من", en: "Support Tickets", icon: <ConfirmationNumberIcon />, link: "/profile/tickets", color: "from-emerald-500/20" },
+          ].map((item, index) => (
+            <Link 
+              key={item.id} 
+              href={item.link}
+              className={`
+                relative overflow-hidden group flex flex-col items-center justify-center 
+                py-4 md:py-8 min-h-30 md:min-h-45
+                rounded-3xl md:rounded-[2.5rem] bg-bg-light backdrop-blur-2xl transition-all duration-300 
+                border-2 border-blue-bold hover:scale-[1.05] active:scale-95
+                ${index === 2 ? "col-span-2 md:col-span-1" : "col-span-1"}
+              `}
+            >
+              <div className={`absolute inset-0 bg-linear-to-br ${item.color} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              
+              <div className="relative z-10 p-2 md:p-4 rounded-xl md:rounded-2xl bg-blue-bold/10 text-blue-bold group-hover:bg-blue-bold group-hover:text-text-primary transition-all duration-300 shadow-lg">
+                {cloneElement(item.icon as React.ReactElement<any>, { 
+                  sx: { fontSize: { xs: 22, md: 32 } } 
+                })}
+              </div>
+
+              <div className="relative z-10 flex flex-col items-center gap-1">
+                <span className="text-base md:text-xl font-black text-text-primary">
+                  {item.fa}
+                </span>
+                <span className="text-xs font-bold uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-blue-bold transition-all">
+                  {item.en}
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </section>
 
       <SiteMap />

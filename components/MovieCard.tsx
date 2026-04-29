@@ -20,7 +20,13 @@ export default function MovieCard({ title, image, year, genre, score = "8.5" }: 
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" 
         />
         
-        <div className="absolute inset-0 bg-linear-to-t from-bg-dark via-bg-dark/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col gap-2 items-center justify-end p-5">
+        <div className="
+          absolute inset-0 
+          bg-linear-to-t from-bg-dark/95 via-bg-dark/60 to-transparent 
+          backdrop-blur-[2px]
+          opacity-0 transition-all duration-300 group-hover:opacity-100 
+          flex flex-col gap-2 items-center justify-end p-5
+        ">
           <Badge
             variant="yellow"
             className="p-1 text-xs md:text-sm"
