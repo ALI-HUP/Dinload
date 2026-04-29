@@ -1,11 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { cloneElement, useState } from "react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
-import Logo from "@/public/logo/dinisir-head.jpg";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MovieIcon from '@mui/icons-material/Movie';
 import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 import PsychologyIcon from '@mui/icons-material/Psychology';
@@ -17,6 +14,7 @@ import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 import StarIcon from '@mui/icons-material/Star';
 import AnimationIcon from '@mui/icons-material/Animation'; 
 import Navbar from "@/components/Navbar";
+import SiteMap from "@/components/SiteMap";
 
 
 const categories = [
@@ -41,50 +39,34 @@ export default function CategoriesPage() {
 
       <section className="w-full max-w-7xl px-5 md:px-12 lg:px-20 py-10 flex flex-col gap-10 mb-20">
         
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div className="flex flex-col gap-2">
-            <h1 className="text-3xl md:text-5xl font-black text-text-primary tracking-tighter uppercase italic">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div className="flex items-center gap-3 md:gap-4">
+            <div className="h-8 w-1.5 md:h-12 md:w-2 bg-blue-bold rounded-full shadow-[0_0_15px_rgba(2,132,199,0.5)]" />
+            <h1 className="text-3xl md:text-5xl font-black text-text-primary tracking-tighter uppercase italic leading-none">
               دسته‌بندی‌ها
             </h1>
-            <div className="w-20 h-1.5 bg-blue-bold rounded-full shadow-[0_0_15px_rgba(2,132,199,0.5)]" />
           </div>
 
-          <div className="flex bg-bg-light p-1.5 rounded-3xl border border-blue-bold backdrop-blur-xl w-fit self-center md:self-auto">
+          <div className="flex bg-bg-light p-1.5 rounded-3xl border-2 border-blue-bold/20 backdrop-blur-xl w-fit self-center md:self-auto">
             <button 
               onClick={() => setActiveTab("movies")}
-              className={`
-                w-28 md:w-32 py-3 rounded-2xl font-black transition-all 
-                ${activeTab === "movies" 
-                  ? "bg-blue-bold text-text-primary shadow-lg" 
-                  : "text-text-primary/40 hover:text-text-primary/70"
-                }
-              `}
-            >
-              فیلم
-            </button>
+              className={`w-28 md:w-32 py-3 rounded-2xl font-black transition-all ${activeTab === "movies" ? "bg-blue-bold text-text-primary shadow-lg" : "text-text-primary/40 hover:text-text-primary/70"}`}
+            >فیلم</button>
             <button 
               onClick={() => setActiveTab("series")}
-              className={`
-                w-28 md:w-32 py-3 rounded-2xl font-black transition-all 
-                ${activeTab === "series" 
-                  ? "bg-blue-bold text-text-primary shadow-lg" 
-                  : "text-text-primary/40 hover:text-text-primary/70"
-                }
-              `}
-            >
-              سریال
-            </button>
+              className={`w-28 md:w-32 py-3 rounded-2xl font-black transition-all ${activeTab === "series" ? "bg-blue-bold text-text-primary shadow-lg" : "text-text-primary/40 hover:text-text-primary/70"}`}
+            >سریال</button>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            <Link href={`/categories/imdb-top-250-${activeTab}`} className="relative h-32 md:h-40 overflow-hidden rounded-[2.5rem] bg-bg-light border-2 border-yellow-500/50 group hover:border-yellow-500 transition-all flex items-center justify-between px-8 md:px-12">
+            <Link href={`/categories/imdb-top-250-${activeTab}`} className="relative h-32 md:h-40 overflow-hidden rounded-4xl md:rounded-[3rem] bg-bg-light border-2 border-yellow-500/50 group hover:border-yellow-500 transition-all flex items-center justify-between px-8 md:px-12 active:scale-95">
                 <div className="absolute inset-0 bg-linear-to-r from-yellow-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-all" />
                 <div className="relative z-10 flex flex-col">
                     <span className="text-xl md:text-2xl font-black text-text-primary">۲۵۰ {activeTab === "movies" ? "فیلم" : "سریال"} برتر IMDb</span>
-                    <span className="text-xs font-bold opacity-40 group-hover:text-yellow-500 uppercase tracking-widest">IMDb Top 250 {activeTab}</span>
+                    <span className="text-xs font-bold opacity-40 group-hover:text-yellow-500 uppercase tracking-widest leading-none mt-1">IMDb Top 250 {activeTab}</span>
                 </div>
-                <StarIcon sx={{ fontSize: 60 }} className="text-yellow-500/20 group-hover:text-yellow-500 group-hover:scale-110 transition-all" />
+                <StarIcon sx={{ fontSize: {xs: 40, md: 60} }} className="text-yellow-500/20 group-hover:text-yellow-500 group-hover:scale-110 transition-all" />
             </Link>
         </div>
 
@@ -93,20 +75,16 @@ export default function CategoriesPage() {
             <Link 
               key={cat.id} 
               href={`/categories/${activeTab}/${cat.id}`}
-              className="relative overflow-hidden group flex flex-col items-center justify-center gap-3 aspect-square rounded-[2.5rem] bg-bg-light backdrop-blur-2xl border border-blue-bold/50 hover:border-blue-bold hover:scale-[1.03] transition-all duration-300"
+              className="relative overflow-hidden group flex flex-col items-center justify-center gap-3 md:gap-6 aspect-square rounded-4xl md:rounded-[3rem] bg-bg-light backdrop-blur-2xl border-2 border-blue-bold/20 hover:border-blue-bold hover:scale-[1.05] transition-all duration-300 active:scale-95"
             >
               <div className={`absolute inset-0 bg-linear-to-br ${cat.color} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              
-              <div className="relative z-10 p-5 rounded-3xl bg-blue-bold/10 text-blue-bold group-hover:bg-blue-bold group-hover:text-text-primary transition-all duration-300 shadow-xl">
-                {cat.icon}
+              <div className="relative z-10 p-3 md:p-5 rounded-2xl md:rounded-3xl bg-blue-bold/10 text-blue-bold group-hover:bg-blue-bold group-hover:text-text-primary transition-all duration-300 shadow-xl">
+                {cloneElement(cat.icon as React.ReactElement<any>, { sx: { fontSize: { xs: 28, md: 40 } } } as any)}
               </div>
-
-              <div className="relative z-10 flex flex-col items-center gap-1">
-                <span className="text-base md:text-lg font-black text-text-primary text-center px-2">
-                  {cat.fa}
-                </span>
-                <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] opacity-40 group-hover:opacity-100 group-hover:text-blue-bold transition-all">
-                  {cat.en} {activeTab === "movies" ? "Movie" : "Series"}
+              <div className="relative z-10 flex flex-col items-center gap-0.5">
+                <span className="text-base md:text-xl font-black text-text-primary">{cat.fa}</span>
+                <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-blue-bold transition-all">
+                  {cat.en}
                 </span>
               </div>
             </Link>
@@ -114,6 +92,7 @@ export default function CategoriesPage() {
         </div>
       </section>
 
+      <SiteMap />
       <Footer />
     </main>
   );

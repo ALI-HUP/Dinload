@@ -15,6 +15,7 @@ import Logo from "@/public/logo/dinisir-head.jpg";
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Navbar from "@/components/Navbar";
+import SiteMap from "@/components/SiteMap";
 
 
 export default function ProfilePage() {
@@ -25,10 +26,10 @@ export default function ProfilePage() {
   const circumference = 2 * Math.PI * 65;
 
   return (
-    <main className="min-h-screen flex mb-20 flex-col items-center">
+    <main className="min-h-screen flex flex-col items-center">
       <Navbar variant="logout" />
 
-      <section className="w-full max-w-7xl px-4 md:px-8 lg:px-12 py-8 flex flex-col gap-8">
+      <section className="w-full max-w-7xl px-4 md:px-8 lg:px-12 py-16 flex flex-col gap-8">
         
         <div className="w-full bg-bg-light backdrop-blur-2xl border border-blue-bold rounded-4xl p-8 md:p-12">
           <h2 className="text-2xl font-black mb-10 flex items-center gap-3">
@@ -156,6 +157,7 @@ export default function ProfilePage() {
 
       </section>
 
+      <SiteMap />
       <Footer />
     </main>
   );
