@@ -1,8 +1,9 @@
 "use client";
-import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import Badge from "@/components/Badge";
+import Link from "next/link";
 
 interface MovieCardProps {
+  id: string;
   title: string;
   image: string;
   year: string;
@@ -11,9 +12,11 @@ interface MovieCardProps {
 }
 
 export default function MovieCard({ title, image, year, genre, score = "8.5" }: MovieCardProps) {
+  const movieSlug = title.toLowerCase().trim().replace(/\s+/g, '-');
+
   return (
-    <div className="group relative flex flex-col cursor-pointer">
-      <div className="relative aspect-2/3 w-full overflow-hidden rounded-2xl border border-text-primary/5 shadow-2xl transition-all duration-500 group-hover:scale-[1.05] group-hover:border-blue-primary">
+    <Link href={`/movie/${movieSlug}`} className="group relative flex flex-col cursor-pointer">
+      <div className="relative aspect-2/3 w-full overflow-hidden rounded-4xl border border-text-primary/5 shadow-2xl transition-all duration-500 group-hover:scale-[1.05] group-hover:border-blue-bold">
         <img 
           src={image} 
           alt={title} 
@@ -55,6 +58,6 @@ export default function MovieCard({ title, image, year, genre, score = "8.5" }: 
             </h3>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
